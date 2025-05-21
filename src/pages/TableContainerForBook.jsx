@@ -3,11 +3,12 @@ import {
     Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, IconButton, Pagination
 } from "@mui/material";
 import { Edit, Delete } from "@mui/icons-material";
-
+import { useNavigate } from "react-router-dom";
 
 const BOOKS_PER_PAGE = 1;
 
 const TableContainerForBook = ({ data, search, genre, status, setDeleteId }) => {
+    const navigate = useNavigate();
     const [page, setPage] = useState(1);
 
     const filteredBooks = data?.filter(
